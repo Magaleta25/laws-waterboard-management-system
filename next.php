@@ -78,58 +78,6 @@ if (!empty($errors['PASSWORD'])) {
 
 
 
-
-
-
-
-
-<?php/*
-    require('connection.php');
-    
-    if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-    
-        // Prepare and execute the SQL query
-        $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $email, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    
-        if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-    
-            $_SESSION['user_id'] = $user['ID'];
-            $_SESSION['user_role'] = $user['role'];
-    
-            switch ($user['role']) {
-                case 'customer':
-                    header("Location: customer/homePage.php");
-                    break;
-                case 'admin':
-                    header("Location: admin/HomePage.php");
-                    break;
-                case 'technician':
-                    header("Location: technician/homePage.php");
-                    break;
-                case 'accountant':
-                    header("Location: customer/updates.php");
-                    break;
-                default:
-                    header("Location: index.php");
-            }
-        } else {
-            echo "Incorrect email or password";
-    
-        }
-    }
-?>
-
-
-
-
-
 <?php/*
 require('connection.php');
 
