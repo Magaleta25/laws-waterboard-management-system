@@ -1,4 +1,4 @@
-<?php
+<?php/*
 require('connection.php');
 
 if (isset($_POST['login'])) {
@@ -42,11 +42,11 @@ if (isset($_POST['login'])) {
         echo "Incorrect email or password";
 
     }
-}
+}*/
 ?>
 
 
-<?php/*
+<?php
 // Start session
 session_start();
 
@@ -75,7 +75,7 @@ if (isset($_POST['login'])) {
             $user = $result->fetch_assoc();
 
             // Verify password using password_verify()
-            if (password_verify($password, $user['password_hash'])) {
+            //if (password_verify($password, $user['password_hash'])) {
                 // Store user details in session
                 $_SESSION['user_id'] = $user['ID'];
                 $_SESSION['user_role'] = $user['role'];
@@ -108,7 +108,7 @@ if (isset($_POST['login'])) {
         $errors['EMAIL'] = "Email is required";
         $errors['PASSWORD'] = "Password is required";
     }
-}
+
 
 // Display errors
 if (!empty($errors['EMAIL'])) {
@@ -118,7 +118,7 @@ if (!empty($errors['PASSWORD'])) {
     echo $errors['PASSWORD'] . "<br>";
     header("Location: index.php");
 
-}*/
+}
 ?>
 
 
