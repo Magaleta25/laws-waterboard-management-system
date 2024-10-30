@@ -1,4 +1,52 @@
 <?php
+require('connection.php');
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prepare and execute the SQL query
+    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        // **No password hashing for testing purposes**
+        // In production, use password_verify() to compare hashed passwords
+
+        $_SESSION['user_id'] = $user['ID'];
+        $_SESSION['user_role'] = $user['role'];
+
+        switch ($user['role']) {
+            case 'customer':
+                header("Location: customer/homePage.php");
+                break;
+            case 'admin':
+                header("Location: customer/updates.php");
+                break;
+            case 'technician':
+                header("Location: customer/updates.php");
+                break;
+            case 'accountant':
+                header("Location: customer/updates.php");
+                break;
+            default:
+                // Handle invalid roles
+                header("Location: index.php");
+        }
+    } else {
+        echo "Incorrect email or password";
+
+    }
+}
+?>
+
+
+<?php/*
 // Start session
 session_start();
 
@@ -70,7 +118,7 @@ if (!empty($errors['PASSWORD'])) {
     echo $errors['PASSWORD'] . "<br>";
     header("Location: index.php");
 
-}
+}*/
 ?>
 
 
