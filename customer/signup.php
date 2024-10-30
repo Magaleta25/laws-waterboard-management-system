@@ -17,8 +17,16 @@
         </div>
         <div>
             
-        <input type="text" placeholder="first name" name="Fname">
-            <input type="text" placeholder="last name" name="Sname">
+            <input type="text" placeholder="Enter your first name" name="Fname">
+            <input type="text" placeholder="Enter your last name" name="Sname">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+        <div>
+            <label for="phone">phone number</label>
+            <input type="number">
         </div>
     
     </div>
