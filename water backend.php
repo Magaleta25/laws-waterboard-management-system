@@ -1,5 +1,5 @@
 <?php
-// Database configuration
+/*// Database configuration
 $servername = "localhost";
 $username = "root"; 
 $password = ""; 
@@ -11,17 +11,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+}*/
+require('connection.php');
 
 // Safely access POST variables
-$name = isset($_POST['name']) ? $_POST['name'] : '';
+$Fname = isset($_POST['Fname']) ? $_POST['Fname'] : '';
+$Lname = isset($_POST['Lname']) ? $_POST['Lname'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $address = isset($_POST['address']) ? $_POST['address'] : '';
 $location = isset($_POST['location']) ? $_POST['location'] : '';
 $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
 
 // Insert data into the database
-$sql = "INSERT INTO applications (name, email, address, location, phone) VALUES ('$name', '$email', '$address', '$location', '$phone')";
+$sql = "INSERT INTO applications (Fname, Lname, email, address, location, phone) VALUES ('$name', '$email', '$address', '$location', '$phone')";
 if ($conn->query($sql) === TRUE) {
     // Send email notification
     require 'PHPMailer/PHPMaile/src/PHPMailer.php'; // Ensure the path is correct
@@ -38,7 +40,7 @@ if ($conn->query($sql) === TRUE) {
     $mail->Port = 587;
 
     $mail->setFrom('mwahimbaalinuswe@gmail.com', 'Water Application');
-    $mail->addAddress('mwahimbaalinuswe@gmail.com'); // Admin email
+    $mail->addAddress('magaletaprescott25@gmail.com'); // Admin email
 
     $mail->isHTML(true);
     $mail->Subject = 'New Water Application';

@@ -13,7 +13,7 @@
 }
 
 .sideBar{
-    background-color:gray;
+    background-color: rgba(128, 133, 138, 0.9);
     width:210px;
     position: fixed;
     top: 90;

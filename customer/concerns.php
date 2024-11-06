@@ -42,7 +42,7 @@ session_start();
             <img class="icon" src="../images/wwaterApplication.PNG" alt="">
         </div>
         <div>
-            <a href="../customer/waterApplication.php">APPLY FOR <br> WATER SUPPLY</a>
+            <a href="../customer/customerWaterApplication">APPLY FOR <br> WATER SUPPLY</a>
         </div>
     </div>
     

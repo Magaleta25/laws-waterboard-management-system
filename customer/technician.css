@@ -4,6 +4,7 @@
 
 .header{
     display: flex;
+    position: fixed;
     flex-direction: column;
     flex:300px 1fr 1fr;
     height: 90px;
@@ -13,7 +14,7 @@
 }
 
 .sideBar{
-    background-color:gray;
+    background-color:DEF4FC;
     width:210px;
     position: fixed;
     top: 90;

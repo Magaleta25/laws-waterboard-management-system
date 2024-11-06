@@ -13,11 +13,11 @@
 }
 
 .sideBar{
-    background-color:gray;
+    background-color:rgba(128, 133, 138, 0.9);
     width:210px;
     position: fixed;
     top: 90;
-    bottom: 180;
+    bottom: 180px;
     left: 0;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    top:502;
+    top:505;
     align-items: center;
     justify-content: center;   
 }

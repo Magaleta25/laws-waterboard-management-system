@@ -42,10 +42,9 @@ session_start();
             <img class="icon" src="../images/wwaterApplication.PNG" alt="">
         </div>
         <div>
-            <a href="../customer/waterApplication.php">APPLY FOR <br> WATER SUPPLY</a>
+            <a href="../customer/customerWaterApplication">APPLY FOR <br> WATER SUPPLY</a>
         </div>
     </div>
-sdfgyhujikjhgfdsdcxwsdfghjmk,lkjhgfdqsaxsADwersdfxcbgtughhhhyukjhbmn,jkjluiozsdfxcvu sdfgyhujikjhgfdsdcxwsdfghjmk,lkjhgfdqsaxsADwersdfxcbgtughhhhyukjhbmn,jkjluiozsdfxcvu
     <footer class="footer">
         <P>@ 2024 livingstonia water Board, All Rights Reserved</P>
     </footer>

@@ -25,14 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $address = $_POST['address'];
-            $location = $_POST['location'];
             $phone = $_POST['phone'];
             $role = $_POST['role'];
-            $temporaryPassword = generateTemporaryPassword();
-            $hashedPassword = password_hash($temporaryPassword, PASSWORD_DEFAULT); // Hash the password
+           /* $temporaryPassword = generateTemporaryPassword();
+            $hashedPassword = password_hash($temporaryPassword, PASSWORD_DEFAULT); // Hash the password*/
 
-            $stmt = $conn->prepare("INSERT INTO users (name, email, address, location, phone, role, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssss", $name, $email, $address, $location, $phone, $role, $hashedPassword);
+            $stmt = $conn->prepare("INSERT INTO users (name, email, address, phone, role,) VALUES (?, ?, ?, ?, ? )");
+            $stmt->bind_param("sssssss", $name, $email, $address, $phone, $role);
             $stmt->execute();
             $stmt->close();
             echo "User added successfully! Temporary password: $temporaryPassword"; // Display temporary password
@@ -48,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $phone = $_POST['phone'];
             $role = $_POST['role'];
 
-            $stmt = $conn->prepare("UPDATE users SET name=?, email=?, address=?, location=?, phone=?, role=? WHERE id=?");
+            $stmt = $conn->prepare("UPDATE users SET name=?, email=?, address=?, phone=?, role=? WHERE id=?");
             $stmt->bind_param("ssssssi", $name, $email, $address, $location, $phone, $role, $id);
             $stmt->execute();
             $stmt->close();
@@ -100,7 +99,6 @@ $result = $conn->query("SELECT * FROM users");
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="address" placeholder="Address">
-        <input type="text" name="location" placeholder="Location">
         <input type="text" name="phone" placeholder="Phone">
         <input type="text" name="role" placeholder="Role" required> <!-- Added role input -->
         <button type="submit">Add User</button>
@@ -114,7 +112,6 @@ $result = $conn->query("SELECT * FROM users");
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th>Location</th>
                 <th>Phone</th>
                 <th>Role</th> <!-- Added Role to the table header -->
                 <th>Status</th>
@@ -124,22 +121,21 @@ $result = $conn->query("SELECT * FROM users");
         <tbody>
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
-                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['ID']; ?></td>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['address']; ?></td>
-                    <td><?php echo $row['location']; ?></td>
                     <td><?php echo $row['phone']; ?></td>
                     <td><?php echo $row['role']; ?></td> <!-- Added Role to the table -->
                     <td>
                         <form method="POST" style="display:inline;">
                             <input type="hidden" name="action" value="archive">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                             <button type="submit">Archive</button>
                         </form>
                         <form method="POST" style="display:inline;">
                             <input type="hidden" name="action" value="remove">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                             <button type="submit">Remove</button>
                         </form>
                     </td>
@@ -155,7 +151,6 @@ $result = $conn->query("SELECT * FROM users");
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="address" placeholder="Address">
-        <input type="text" name="location" placeholder="Location">
         <input type="text" name="phone" placeholder="Phone">
         <input type="text" name="role" placeholder="Role" required> <!-- Added role input -->
         <button type="submit">Update User</button>

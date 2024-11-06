@@ -26,7 +26,7 @@
         <div>
             <a href="">forget password</a>
         </div>
-         <a href="customer/signup.php">  create   account </a> 
+         <a href="signup.html">create account </a> 
     </form>
 </div>
 
@@ -47,6 +47,7 @@ function EMAIL(input)
     if(input === "")
         {
             alert("please enter your email");
+            event.preventDefault();
         }
 }
 
@@ -55,6 +56,7 @@ function PASSWORD(input)
     if(input === "")
         {
             alert("please enter your password");
+            event.preventDefault();
         }
 }
        

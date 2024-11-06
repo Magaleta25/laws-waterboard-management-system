@@ -1,51 +1,3 @@
-<?php/*
-require('connection.php');
-
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Prepare and execute the SQL query
-    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-
-        // **No password hashing for testing purposes**
-        // In production, use password_verify() to compare hashed passwords
-
-        $_SESSION['user_id'] = $user['ID'];
-        $_SESSION['user_role'] = $user['role'];
-
-        switch ($user['role']) {
-            case 'customer':
-                header("Location: customer/homePage.php");
-                break;
-            case 'admin':
-                header("Location: customer/updates.php");
-                break;
-            case 'technician':
-                header("Location: customer/updates.php");
-                break;
-            case 'accountant':
-                header("Location: customer/updates.php");
-                break;
-            default:
-                // Handle invalid roles
-                header("Location: index.php");
-        }
-    } else {
-        echo "Incorrect email or password";
-
-    }
-}*/
-?>
-
-
 <?php
 // Start session
 session_start();
@@ -86,7 +38,7 @@ if (isset($_POST['login'])) {
                         header("Location: customer/homePage.php");
                         break;
                     case 'admin':
-                        header("Location: admin/HomePage.php");
+                        header("Location: admin/adminDashboard.php");
                         break;
                     case 'technician':
                         header("Location: technician/homePage.php");
@@ -121,86 +73,3 @@ if (!empty($errors['PASSWORD'])) {
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-<?php/*
-require('connection.php');
-
-$errors = array('EMAIL'=>'');
-$ERRORS = array('PASSWORD'=>'');
-
-    if(isset($_POST['login']))
-    {
-        
-        if(empty($_POST['email']) && empty($_POST['password']) )
-        {
-            header("Location:index.php");
-        }
-        else
-        {
-            session_start();
-         $Email = $_POST['email'];
-           // $Email="cen-01-22-22@unilia.ac.mw";
-            $Password = $_POST['password'];
-            $newEmail = htmlspecialchars($Email);
-            //$Password = htmlspecialchars($Password); 
-           // $Password = md5($Password);
-
-        $query = mysqli_query($conn, "SELECT * FROM users WHERE email ='".$Email."' AND password = '".$Password."'" );
-        
-        
-        $res=mysqli_fetch_row($query);
-         
-        if($res){
-           
-            echo "correct email or password";
-            
-            $_SESSION['user_id'] = $user['ID'];
-            $_SESSION['user_role'] = $user['role'];
-    
-            switch ($user['role']) {
-                case 'customer':
-                    header("Location: customer/homePage.php");
-                    break;
-                case 'admin':
-                    header("Location: customer/updates.php");
-                    break;
-                case 'technician':
-                    header("Location: customer/updates.php");
-                    break;
-                case 'accountant':
-                    header("Location: customer/updates.php");
-                    break;
-                default:
-                    // Handle invalid roles
-                    header("Location: index.php");
-            }
-        } else {
-            echo "Incorrect email or password";
-        }
-    
-       
-     
-      /* $userRole = $res['role'];
-            if ($userRole === 'customer') 
-                {
-                     echo "Welcome Customer!";
-                } else if ($userRole === 'admin') 
-                {
-                     echo "Welcome Admin!";
-                }
-            
-        }else{
-            echo "incorrect email or password";
-            header("Location:index.php");
-        }
-        }*/ 
-?> 
