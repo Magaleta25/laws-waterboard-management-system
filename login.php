@@ -53,6 +53,8 @@ if (isset($_POST['login']))
                 ?>
                     <sript>
                         alert("email or password incorrect");
+                        alert("please enter your email");
+                        
                     </sript>
                 <?php
             }
@@ -90,17 +92,17 @@ if (isset($_POST['login']))
         <div>
             <a href="">forget password</a>
         </div>
-         <a href="signup.html">create account </a> 
+         <a href="../signup.html">create account </a> 
     </form>
 </div>
 
-<script>
-        let emailElement = document.querySelector("#email");
-        let passwordElement = document.querySelector("#password");
-        let loginElemenent = document.querySelector(".login");
-        let FORMElemenent = document.querySelector(".form");        
+<script src="login.js" >//src="login.js"
+   let emailElement = document.querySelector("#email");
+let passwordElement = document.querySelector("#password");
+let loginElemenent = document.querySelector(".login");
+let FORMElemenent = document.querySelector(".form");        
 
-        FORMElemenent.addEventListener("submit",(Event)=>{
+FORMElemenent.addEventListener("submit",(Event)=>{
             let email = EMAIL(emailElement.value);
             let password = PASSWORD(passwordElement.value);
 
@@ -122,7 +124,7 @@ function PASSWORD(input)
             alert("please enter your password");
             event.preventDefault();
         }
-}
+}     
        
 </script>
     
