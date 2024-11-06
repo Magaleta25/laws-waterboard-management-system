@@ -14,7 +14,7 @@
         <div class="profile">
             <a href="profile.php">
             <i class="fas fa-user-circle"></i>
-            <span class="profile.php"></span></a>
+            <span class="../admin/profile.php"></span></a>
             
         </div>
         <!--<div class="profile">
