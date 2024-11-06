@@ -80,9 +80,6 @@ $conn->close();
         <h1>livingstonia water board</h1>
         </div> 
         <div>
-
-        </div>
-        <div>
             profile
         </div>
     </header>

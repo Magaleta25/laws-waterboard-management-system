@@ -14,16 +14,15 @@ body {
 
 .header{
     display: flex;
-    flex-direction: column;
-    flex:300px 1fr 1fr;
+    flex-direction: row;
+    
     height: 90px;
     align-items: center;
     justify-content: center;
     background-color: rgb(17, 129, 204);
     position: fixed;
     top: 0;
-    left: 0;
-    color: pink;
+    left: 0px;
 }
 
 

@@ -1,9 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingstonia Waterboard</title>
-    <link rel="stylesheet" href="index.css" >
+    <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
 
@@ -16,62 +17,50 @@
             <a href="#">About Us</a>
             <a href="#">Contact</a>
             <div class="nav-actions">
-                <a href="login.php" class="login-btn">Login</a>
+                <a href="/html/login.html" class="login-btn">Login</a>
             </div>
         </nav>
     </header>
-<div>
-<form class="form" action="next.php" method="POST">
-        <div><label for="email">Email</label></div>
-        <div>
-        <input class="input"  type="email" placeholder="email" id="email" name="email">
-        </div>
-       <!-- <div><?php echo  htmlspecialchars($_POST[$errors['EMAIL']]);  ?></div>-->
-        <div><label for="password">Password</label></div>
-        <div>
-        <input class="input" type="password" id="password" name="password" id="password">
-        </div>
-        <div>
-            <input class="login" type="submit" value="Login" name="login">
-        </div>
-        <div>
-            <a href="">forget password</a>
-        </div>
-         <a href="signup.html">create account </a> 
-    </form>
-</div>
 
-<script>
-        let emailElement = document.querySelector("#email");
-        let passwordElement = document.querySelector("#password");
-        let loginElemenent = document.querySelector(".login");
-        let FORMElemenent = document.querySelector(".form");        
+    <!-- Main Content -->
+    <main>
+        <!-- Middle Section -->
+        <section class="middle-section">
+            <h2>Welcome to the Livingstonia Waterboard</h2>
+            <p>Your trusted water service provider, committed to quality, reliability, and sustainability. Explore our services, pay bills, register complaints, and provide feedback easily.</p>
+        </section>
 
-        FORMElemenent.addEventListener("submit",(Event)=>{
-            let email = EMAIL(emailElement.value);
-            let password = PASSWORD(passwordElement.value);
+        <section class="services-heading">
+          <h2>Our Services</h2>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="service-box">
+                <h3>Water Service Application</h3>
+                <p>Apply for new water service connections with a few simple steps.</p>
+            </div>
+            <div class="service-box">
+                <h3>User Complaints</h3>
+                <p>Report any issues or complaints you may have regarding our services.</p>
+            </div>
+            <div class="service-box">
+                <h3>Bill Payments</h3>
+                <p>Make payments quickly and securely from the comfort of your home.</p>
+            </div>
+            <div class="service-box">
+                <h3>Customer Feedback</h3>
+                <p>Your feedback is important to us. Let us know how we can improve.</p>
+            </div>
+        </section>
 
-});
+        <a href="/html/signup.html" class="join-btn">Join Us</a>
+    </main>
 
-function EMAIL(input)
-{
-    if(input === "")
-        {
-            alert("please enter your email");
-            event.preventDefault();
-        }
-}
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Livingstonia Waterboard. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </footer>
 
-function PASSWORD(input)
-{
-    if(input === "")
-        {
-            alert("please enter your password");
-            event.preventDefault();
-        }
-}
-       
-</script>
-    
 </body>
 </html>

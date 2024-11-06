@@ -13,6 +13,7 @@ if (isset($_POST['login']))
 {
         $email = $_POST['email'];
         $password = $_POST['password'];
+        if (!empty($email) && !empty($password)) { 
 
         // Prepare and execute SQL query
         $sql = "SELECT * FROM users WHERE email = ?";
@@ -49,17 +50,18 @@ if (isset($_POST['login']))
                         header("Location: login.php");
                 }
                 exit;
-            } else {
-                ?>
-                    <sript>
-                        alert("email or password incorrect");
-                        alert("please enter your email");
-                        
-                    </sript>
-                <?php
-            }
-} 
-
+            } else { 
+                $errors['PASSWORD'] = "Incorrect password";
+                $errors['EMAIL'] = "Incorrect email";  
+            } 
+        } else { 
+            $errors['LOGIN'] = "Email not found in our database"; 
+        }
+    } 
+     else { 
+        $errors['EMAIL'] = "Email is required"; 
+        $errors['PASSWORD'] = "Password is required"; 
+    } 
 
 ?>
 
@@ -68,7 +70,7 @@ if (isset($_POST['login']))
 <head>
 <title></title>
 </head>
-<link rel="stylesheet" href="../login.css">
+<link rel="stylesheet" href="login.css">
 <body>
     <header class="header">
         <div>
@@ -77,14 +79,19 @@ if (isset($_POST['login']))
     </header>
 <div>
 <form class="form" action="login.php" method="POST">
-        <div><label for="email">Email</label></div>
+        <div>
+        <label for="email">Email</label>
+        </div>
         <div>
         <input class="input"  type="email" placeholder="email" id="email" name="email">
+        <?php if (!empty($errors['EMAIL'])) { echo "<span style='color: red'>".$errors['EMAIL']."</span>"; } ?>
         </div>
        <!-- <div><?php echo  htmlspecialchars($_POST[$errors['EMAIL']]);  ?></div>-->
         <div><label for="password">Password</label></div>
         <div>
         <input class="input" type="password" id="password" name="password" id="password">
+        <?php if (!empty($errors['PASSWORD'])) { echo "<span style='color: red; margin-right:10px;'>".$errors['PASSWORD']."</span>"; } ?>
+
         </div>
         <div>
             <input class="login" type="submit" value="Login" name="login">
@@ -92,12 +99,12 @@ if (isset($_POST['login']))
         <div>
             <a href="">forget password</a>
         </div>
-         <a href="../signup.html">create account </a> 
+         <a href="signup.html">create account </a> 
     </form>
 </div>
 
-<script src="login.js" >//src="login.js"
-   let emailElement = document.querySelector("#email");
+<script src="login.js">//src="login.js"
+ /*  let emailElement = document.querySelector("#email");
 let passwordElement = document.querySelector("#password");
 let loginElemenent = document.querySelector(".login");
 let FORMElemenent = document.querySelector(".form");        
