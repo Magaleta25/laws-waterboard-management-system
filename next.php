@@ -47,7 +47,7 @@ if (isset($_POST['login'])) {
                         header("Location: accountant/homePage.php");
                         break;
                     default:
-                        header("Location: index.php");
+                        header("Location: login.php");
                 }
                 exit;
             } else {
@@ -68,7 +68,7 @@ if (!empty($errors['EMAIL'])) {
 }
 if (!empty($errors['PASSWORD'])) {
     echo $errors['PASSWORD'] . "<br>";
-    header("Location: index.php");
+    header("Location: login.php");
 
 }
 ?>
