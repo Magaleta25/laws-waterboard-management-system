@@ -1,24 +1,13 @@
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livingstonia Waterboard</title>
-    <link rel="stylesheet" href="index.css" >
+<title></title>
 </head>
+<link rel="stylesheet" href="login.css">
 <body>
-
-    <!-- Header -->
-    <header>
-        <h1>Livingstonia Waterboard</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <div class="nav-actions">
-                <a href="login.php" class="login-btn">Login</a>
-            </div>
-        </nav>
+    <header class="header">
+        <div>
+        <h1>livingstonia water board</h1>
+        </div> 
     </header>
 <div>
 <form class="form" action="next.php" method="POST">
