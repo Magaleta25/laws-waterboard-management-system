@@ -1,5 +1,6 @@
-<?php include 'water backend'; ?>
+
 <?php
+require('../waterBackend.php');
 $servername = "localhost";
 $dbusername = "root";
 $dbpassword = ""; // Add your database password here if it's not empty
@@ -66,14 +67,23 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="water app.css">
+    <link rel="stylesheet" href="../customer/waterApp.css">
     <title>Application Form</title>
 </head>
 <body>
+<header class="header">
+        <div>
+        <h1>livingstonia water board</h1>
+        </div> 
+        <div>
+            profile
+        </div>
+    </header>
+
     <div class="container">
         <h1>Application Form</h1>
         <form action="submit_form.php" method="POST" onsubmit="return validateForm()">

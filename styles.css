@@ -83,3 +83,8 @@ input, select {
     background-color: rgba(0, 76, 140, 0.7);
     transition: 0.3s;
 }
+
+a{
+    color: black;
+    margin-left: 5px;
+}

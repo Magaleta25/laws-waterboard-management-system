@@ -61,15 +61,5 @@ if (isset($_POST['login'])) {
         $errors['PASSWORD'] = "Password is required";
     }
 
-
-// Display errors
-if (!empty($errors['EMAIL'])) {
-    echo $errors['EMAIL'] . "<br>";
-}
-if (!empty($errors['PASSWORD'])) {
-    echo $errors['PASSWORD'] . "<br>";
-    header("Location: login.php");
-
-}
 ?>
 
