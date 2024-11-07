@@ -11,8 +11,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url(/photos/water_landin.jpg);
+    background-image: url(images/light\ blue.webp);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Header and Navigation */

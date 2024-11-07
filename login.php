@@ -23,10 +23,10 @@
         <div>
             <input class="login" type="submit" value="Login" name="login">
         </div>
-        <div>
+        <div class="bottom-text" >
             <a href="">forget password</a>
-        </div>
-         <a href="signup.html">create account </a> 
+            <a href="signup.html">create account </a>
+        </div> 
     </form>
 </div>
 

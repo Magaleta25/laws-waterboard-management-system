@@ -4,6 +4,12 @@
     margin: 0;
     font-family: "Roboto", sans-serif;
 }
+body {
+    background-color: rgb(236, 236, 236);
+    background-image: url(images/light\ blue.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .header{
     display: flex;
@@ -12,7 +18,8 @@
     height: 90px;
     align-items: center;
     justify-content: center;
-    background-color: rgb(17, 129, 204);
+    background-color: #004c8c;
+    color: white;
 }
 
 .form{
@@ -20,38 +27,42 @@
     width: 250px;
     margin-top: 150px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.541);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background-color: rgb(255, 255, 242);
+    padding: 20px 20px;
     border-radius: 10px;
 }
 
 label{
     margin-left: 20px;
-    margin-top:20px;
 }
 
 .input{
     margin-left: 20px;
     margin-bottom:10px;
-    margin-top:10px;
-    padding-right: 35px;
-    padding-left: 2px;
+    margin-top:5px;
+    padding: 6px 35px 6px 6px;
     outline: none;
 }
 .login{
     margin-left: 65px;
-    background-color: rgb(17, 129, 204);
+    background-color: #004c8c;
     border-style:solid;
     border-width:0px;
-    padding-right: 40px;
-    padding-left: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;    
+    padding: 10px 40px 10px 40px;
+    margin-bottom:5px; 
+    margin-top: 5px;  
+    color: white; 
+    transition: 0.2s;
 }
 
 .login:hover{
     cursor: pointer;
+    background-color: rgba(0, 76, 140, 0.9);
+    transition: 0.2s;
+}
+.login:active {
+    background-color: rgba(0, 76, 140, 0.7);
+    transition: 0.2s;
 }
 a{
     text-decoration: none;
@@ -68,5 +79,21 @@ a1{
 }
 a1:hover{
     cursor: pointer;
-
+}
+.bottom-text {
+    padding: 5px; 
+}
+ a{
+    display: block;
+    margin: 3px;
+    margin-left: 25%;
+    transition: 0.1s;
+}
+a:hover {
+    color: #004c8c;
+    transition: 0.2s;
+}
+a:active {
+    color: rgba(0, 76, 140, 0.9);
+    transition: 0.2s;
 }
