@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingstonia Waterboard</title>
-    <link rel="stylesheet" href="index.css" >
+    <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
 
@@ -17,7 +17,7 @@
             <a href="#">About Us</a>
             <a href="#">Contact</a>
             <div class="nav-actions">
-                <a href="login.php" class="login-btn">Login</a>
+                <a href="/html/login.html" class="login-btn">Login</a>
             </div>
         </nav>
     </header>
@@ -54,7 +54,7 @@
             </div>
         </section>
 
-        <a href="signup.html" class="join-btn">Join Us</a>
+        <a href="/html/signup.html" class="join-btn">Join Us</a>
     </main>
 
     <!-- Footer -->

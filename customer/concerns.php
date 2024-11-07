@@ -16,7 +16,11 @@ session_start();
 
         </div>
         <div>
-            profile
+            <button onclick="profile();">profile</button>    
+            <script>
+                let button = document.querySelector(".button");
+
+            </script>
         </div>
     </header>
     <div class="sideBar">

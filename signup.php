@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert data into the database
-    $sql = "INSERT INTO users (name, email, phone, address, password, role) VALUES ('$username', '$email', '$tel', '$address', '$hashed_password', '$usertype')";
+    $sql = "INSERT INTO users (name, email, phone, address, password_hash, role) VALUES ('$username', '$email', '$tel', '$address', '$hashed_password', '$usertype')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header("Location:index.php");
+        header("Location:login.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
