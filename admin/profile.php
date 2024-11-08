@@ -1,3 +1,7 @@
+<?php
+    require('../connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
     <div class="container">
         <aside class="sidebar">
             <ul>
-                <li><a href="admin dashboard .php">Dashboard</a></li>
+                <li><a href="adminDashboard.php">Dashboard</a></li>
                 <li><a href="Finance.php">Finance</a></li>
                 <li><a href="Technician.php">Technician Management</a></li>
                 <li><a href="customer_service.php">Customer Service</a></li>
@@ -34,15 +38,15 @@
                     <i class="fas fa-user-circle fa-5x"></i>
                 </div>
                 <div class="details">
+
                     <h2>Nuswe</h2>
-                    <p>Email: web.6@group.com</p>
-                    <p>Role: Administrator</p>
-                    <p>Joined: October 28, 2024</p>
+                    <p>Email:</p>
+                    <p>Role:</p>
                 </div>
             </div>
             <div class="actions">
-            <a href="admin edit.php">
-            <button>Edit Profile</button></a>
+            <a href="adminEdit.php">
+            <button>Add User</button></a>
 
                 <a href="change password.php"><button>Change Password</button></a>
             </div>

@@ -10,12 +10,21 @@
         </div> 
     </header>
 <div>
+    <div class="error-message">
+        <?php
+            if(isset($_GET['error'])){
+                echo $_GET['error'];
+            }
+        ?>
+        <div class="error"></div>
+    </div>
 <form class="form" action="next.php" method="POST">
         <div><label for="email">Email</label></div>
         <div>
         <input class="input"  type="email" placeholder="email" id="email" name="email">
         </div>
-       <!-- <div><?php echo  htmlspecialchars($_POST[$errors['EMAIL']]);  ?></div>-->
+       <!-- <?php if (empty($errors['EMAIL'])) { echo "<span style='color: red'>".$errors['EMAIL']."</span>"; } ?>
+        -->
         <div><label for="password">Password</label></div>
         <div>
         <input class="input" type="password" id="password" name="password" id="password">
@@ -34,19 +43,19 @@
         let emailElement = document.querySelector("#email");
         let passwordElement = document.querySelector("#password");
         let loginElemenent = document.querySelector(".login");
-        let FORMElemenent = document.querySelector(".form");        
+        let FORMElemenent = document.querySelector(".form"),
+        error = document.queryselector(".error");        
 
-        FORMElemenent.addEventListener("submit",(Event)=>{
+        FORMElemenent.addEventListener("submit",(e)=>{
             let email = EMAIL(emailElement.value);
             let password = PASSWORD(passwordElement.value);
-
 });
 
 function EMAIL(input)
 {
     if(input === "")
         {
-            alert("please enter your email");
+            error.innerHTML = "please enter your email";
             event.preventDefault();
         }
 }

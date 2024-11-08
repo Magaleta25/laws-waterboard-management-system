@@ -24,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_POST['action'] == 'add') {
             $name = $_POST['name'];
             $email = $_POST['email'];
-            $address = $_POST['address'];
+            $location = $_POST['location'];
             $phone = $_POST['phone'];
             $role = $_POST['role'];
-           /* $temporaryPassword = generateTemporaryPassword();
-            $hashedPassword = password_hash($temporaryPassword, PASSWORD_DEFAULT); // Hash the password*/
+            $temporaryPassword = "1234"; //generateTemporaryPassword();
+            $hashedPassword = md5($temporaryPassword); // Hash the password
 
-            $stmt = $conn->prepare("INSERT INTO users (name, email, address, phone, role,) VALUES (?, ?, ?, ?, ? )");
-            $stmt->bind_param("sssssss", $name, $email, $address, $phone, $role);
+            $stmt = $conn->prepare("INSERT INTO users (name, email, location, phone, role, password_hash) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssss", $name, $email,$location, $phone, $role, $hashedPassword);
             $stmt->execute();
             $stmt->close();
             echo "User added successfully! Temporary password: $temporaryPassword"; // Display temporary password
@@ -42,13 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = $_POST['id'];
             $name = $_POST['name'];
             $email = $_POST['email'];
-            $address = $_POST['address'];
             $location = $_POST['location'];
             $phone = $_POST['phone'];
             $role = $_POST['role'];
 
-            $stmt = $conn->prepare("UPDATE users SET name=?, email=?, address=?, phone=?, role=? WHERE id=?");
-            $stmt->bind_param("ssssssi", $name, $email, $address, $location, $phone, $role, $id);
+            $stmt = $conn->prepare("UPDATE users SET name=?, email=?, location=?, phone=?, role=? WHERE id=?");
+            $stmt->bind_param("ssssss", $name, $email, $location, $phone, $role, $id);
             $stmt->execute();
             $stmt->close();
             echo "User updated successfully!";
@@ -58,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         elseif ($_POST['action'] == 'archive') {
             $id = $_POST['id'];
 
-            $stmt = $conn->prepare("UPDATE users SET status='archived' WHERE id=?");
-            $stmt->bind_param("i", $id);
+            $stmt = $conn->prepare("UPDATE users SET status='archived' WHERE ID=?");
+            $stmt->bind_param("i", $ID);
             $stmt->execute();
             $stmt->close();
             echo "User archived successfully!";
@@ -98,7 +97,7 @@ $result = $conn->query("SELECT * FROM users");
         <input type="hidden" name="action" value="add">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="location" placeholder="Location">
         <input type="text" name="phone" placeholder="Phone">
         <input type="text" name="role" placeholder="Role" required> <!-- Added role input -->
         <button type="submit">Add User</button>
@@ -111,7 +110,7 @@ $result = $conn->query("SELECT * FROM users");
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Address</th>
+                <th>Location</th>
                 <th>Phone</th>
                 <th>Role</th> <!-- Added Role to the table header -->
                 <th>Status</th>
@@ -124,7 +123,7 @@ $result = $conn->query("SELECT * FROM users");
                     <td><?php echo $row['ID']; ?></td>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><?php echo $row['address']; ?></td>
+                    <td><?php echo $row['location']; ?></td>
                     <td><?php echo $row['phone']; ?></td>
                     <td><?php echo $row['role']; ?></td> <!-- Added Role to the table -->
                     <td>
@@ -144,13 +143,13 @@ $result = $conn->query("SELECT * FROM users");
         </tbody>
     </table>
 
-    <h2>Edit User</h2>
+    <h2>Add User</h2>
     <form method="POST">
         <input type="hidden" name="action" value="edit">
         <input type="number" name="id" placeholder="User ID" required>
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="location" placeholder="Location">
         <input type="text" name="phone" placeholder="Phone">
         <input type="text" name="role" placeholder="Role" required> <!-- Added role input -->
         <button type="submit">Update User</button>

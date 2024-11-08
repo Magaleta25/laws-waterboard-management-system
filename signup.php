@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usertype = $conn->real_escape_string($_POST['usertype']);
     $password = $conn->real_escape_string($_POST['password']);
     $confirm_password = $conn->real_escape_string($_POST['confirm-password']);
-
+   // $usertype = "customer";
     // Validate password match
     if ($password !== $confirm_password) {
         echo "Passwords do not match.";
@@ -31,15 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $password = md5($password);
 
     // Insert data into the database
-    $sql = "INSERT INTO users (name, email, phone, address, password, role) VALUES ('$username', '$email', '$tel', '$address', '$hashed_password', '$usertype')";
+    $sql = "INSERT INTO users (name, email, phone, address, password_hash, role) VALUES ('$username', '$email', '$tel', '$address', '$password', '$usertype')";
 
-    if ($conn->query($sql) === TRUE) {
+    
+    $result = $conn->query($sql);
+
+    if($result){
         echo "New record created successfully";
-        header("Location:index.php");
-    } else {
+    }
+    else{
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }

@@ -11,7 +11,9 @@
 <body>
     <div class="header">
         <div class="logo">LIVINGSTONIA WATER BOARD</div>
+        
         <div class="profile">
+         <a href="../logout.php">logout</a>
             <a href="profile.php">
             <i class="fas fa-user-circle"></i>
             <span class="profile.php"></span></a>
@@ -26,7 +28,7 @@
     <div class="container">
         <nav class="sidebar">
             <ul>
-                <li><a href="admin dashboard .php">Dashboard Overview</a></li>
+                <li><a href="adminDashboard.php">Dashboard Overview</a></li>
                 <li><a href="Finance.php">Finance</a></li>
                 <li><a href="Technician.php">Technician Management</a></li>
                 <li><a href="customer_service.php">Customer Service</a></li>
@@ -64,5 +66,6 @@
             });
         });   
     </script>
+    
 </body>
 </html>

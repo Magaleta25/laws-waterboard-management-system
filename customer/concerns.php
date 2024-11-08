@@ -16,7 +16,7 @@ session_start();
 
         </div>
         <div>
-            profile
+            <a href="../custhmer/profile.php">profile</a>
         </div>
     </header>
     <div class="sideBar">
