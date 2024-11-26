@@ -1,12 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    color: black;
+    color: white;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 .header{
     display: flex;
     flex-direction: row;
@@ -17,7 +15,6 @@
     background-color: rgb(17, 129, 204);
     color: white;
 }
-
 .profileButton{
     background-color: rgb(17, 129, 204);
     border: none;
@@ -34,7 +31,6 @@
     height: 50px;
     border-radius: 30px;
 }
-
 
 .sideBar{
     background-color: rgba(128, 133, 138, 0.9);
@@ -67,69 +63,32 @@
     cursor: pointer;
 }
 
-
-
-.complaint{
-    
-    padding-bottom: 20px;
-}
-
-a{
-    text-decoration: none;
-    color:white;
-    margin-bottom: 10px;
-}
-
-.body{
-    margin-left: 100px;
-}
-
-.form{
-    
+.bodyContain{
     margin: auto;
-    width: 530px;
-    /*margin-left: 360px;*/
-    margin-top: 25px;
-    background-color:rgb(128, 133, 138);
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-radius: 20px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /*flex-direction: row;*/
+    row-gap: 50px;
+
 }
 
-.name{
-    display: inline-block;
+.bodyContain1{
+    background-color: rgb(128, 133, 138);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    margin-top: 70px;
     margin-left: 20px;
-    margin-bottom: 18px;
-    
 }
 
-label{
-    margin-bottom: 10px;
-}
-input{
-    outline: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    /*padding-right: 40px;*/
-    width: 150%;
-    margin-top: 10px;
-    color: black;
-    border-radius: 5px;
-    border: none;
-}
-
-.submit{
-    margin-left: 120px;
-    background-color: gray;
-    border-style:solid;
-    border-radius: 10px;
-    cursor:pointer;
-    width: 200px;
-}
-
-.name{
-    display: inline-block;
-    margin-right: 80px;
+.bodyContain2{
+    background-color:rgb(128, 133, 138);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    margin-top: 70px;
+    margin-left: 20px;
 }
 
 .footer{
@@ -142,4 +101,11 @@ input{
     top:565;
     align-items: center;
     justify-content: center;   
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    margin-bottom: 10px;
+    width: 100%;
 }

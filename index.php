@@ -5,23 +5,27 @@
 <link rel="stylesheet" href="index.css">
 <body>
     <header class="header">
+        
         <div>
-        <h1>livingstonia water board</h1>
+        <h1>Livingstonia Water Board</h1>
+        </div>
+        <div>
+            <img class="logo" src="images/synodLogo.jpg" alt="">
         </div> 
     </header>
 <div>
-    <div class="error-message">
+    </div>
+    <form class="form" action="next.php" method="POST">
+        <div class="error-message">
         <?php
             if(isset($_GET['error'])){
                 echo $_GET['error'];
             }
         ?>
-        <div class="error"></div>
-    </div>
-<form class="form" action="next.php" method="POST">
+        </div>
         <div><label for="email">Email</label></div>
         <div>
-        <input class="input"  type="email" placeholder="email" id="email" name="email">
+        <input class="input"  type="email"  id="email" name="email">
         </div>
        <!-- <?php if (empty($errors['EMAIL'])) { echo "<span style='color: red'>".$errors['EMAIL']."</span>"; } ?>
         -->
@@ -37,14 +41,15 @@
         </div>
          <a href="signup.html">create account </a> 
     </form>
-</div>
 
 <script>
         let emailElement = document.querySelector("#email");
         let passwordElement = document.querySelector("#password");
         let loginElemenent = document.querySelector(".login");
         let FORMElemenent = document.querySelector(".form"),
-        error = document.queryselector(".error");        
+        let error = document.queryselector(".error");  
+        
+        
 
         FORMElemenent.addEventListener("submit",(e)=>{
             let email = EMAIL(emailElement.value);
@@ -68,7 +73,9 @@ function PASSWORD(input)
             event.preventDefault();
         }
 }
-       
+  
+  
+
 </script>
     
 </body>

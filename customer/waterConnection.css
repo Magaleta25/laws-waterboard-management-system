@@ -5,23 +5,15 @@
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .header{
     display: flex;
     flex-direction: row;
-    column-gap: 3px;
     flex:300px 1fr 1fr;
     height: 80px;
     align-items: center;
     justify-content: space-between;
     background-color: rgb(17, 129, 204);
     color: white;
-
-}
-
-.logal{
-    display: flex;
-    flex-direction: row;
 }
 
 .profileButton{
@@ -44,7 +36,6 @@
 .sideBar{
     background-color: rgba(128, 133, 138, 0.9);
     width:250px;
-    position: fixed;
     top: 80;
     bottom: 80;
     left: 0;
@@ -58,8 +49,7 @@
 
 .insideSideBar{
     background-color:rgb(128, 133, 138);
-    margin-bottom: 10px;
-    padding-top: 10px;
+    margin-bottom: 30px;
     margin-top: 5px;
     font-size: large;
     padding: 20px 20px;
@@ -73,58 +63,87 @@
     cursor: pointer;
 }
 
-.bodyContain{
-    margin: auto;
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /*flex-direction: row;*/
-    row-gap: 50px;
-
+.sidebaerAndForm{
+    display:flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.container {
+    background-color:  #0056b3;  /*rgba(0, 0, 0, 0.7)*/
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 70px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.bodyContain1{
-    background-color: rgb(128, 133, 138);
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 90px;
-    margin-top: 70px;
-    margin-left: 20px;
-    margin-right: 50px;
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.bodyContain2{
-    background-color:rgb(128, 133, 138);
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    margin-top: 70px;
-    margin-left: 20px;
-    margin-right: 20px;
+label {
+    margin: 10px 0 5px;
+    display: block;
 }
 
-a{
-    text-decoration: none;
-    color:white;
-    /*margin-right: 10px;*/
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #007BFF; /* Blue border on focus */
+}
+
+.submit{
     width: 100%;
+    padding: 10px;
+    background-color: #007BFF; /* Blue background */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-a1{
-    text-decoration: none;
-    color:white;
-    margin-right: 10px;
-    width: 100%;
+.submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+.submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.error-message {
+    color: #ffdddd;
+    font-size: 0.9em;
+    display: none; /* Hidden by default */
 }
 
 .footer{
     display: flex;
     background-color: rgb(17, 129, 204);
-    position: fixed;
+   position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     top:565;
     align-items: center;
     justify-content: center;   
+}
+
+a{
+    text-decoration: none;
+    color: whhite;
 }

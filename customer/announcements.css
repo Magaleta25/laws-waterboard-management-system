@@ -6,7 +6,6 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 .header{
     display: flex;
     flex-direction: row;
@@ -34,7 +33,6 @@
     height: 50px;
     border-radius: 30px;
 }
-
 
 .sideBar{
     background-color: rgba(128, 133, 138, 0.9);
@@ -69,69 +67,10 @@
 
 
 
-.complaint{
-    
-    padding-bottom: 20px;
-}
-
-a{
-    text-decoration: none;
-    color:white;
-    margin-bottom: 10px;
-}
-
-.body{
-    margin-left: 100px;
-}
-
-.form{
-    
+.announcements{
     margin: auto;
-    width: 530px;
-    /*margin-left: 360px;*/
-    margin-top: 25px;
-    background-color:rgb(128, 133, 138);
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-radius: 20px;
+    width: 500px;
 }
-
-.name{
-    display: inline-block;
-    margin-left: 20px;
-    margin-bottom: 18px;
-    
-}
-
-label{
-    margin-bottom: 10px;
-}
-input{
-    outline: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    /*padding-right: 40px;*/
-    width: 150%;
-    margin-top: 10px;
-    color: black;
-    border-radius: 5px;
-    border: none;
-}
-
-.submit{
-    margin-left: 120px;
-    background-color: gray;
-    border-style:solid;
-    border-radius: 10px;
-    cursor:pointer;
-    width: 200px;
-}
-
-.name{
-    display: inline-block;
-    margin-right: 80px;
-}
-
 .footer{
     display: flex;
     background-color: rgb(17, 129, 204);
@@ -142,4 +81,18 @@ input{
     top:565;
     align-items: center;
     justify-content: center;   
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+a1{
+    text-decoration: none;
+    color:white;
+    margin-right: 10px;
+    width: 100%;
 }

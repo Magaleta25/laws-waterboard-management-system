@@ -1,15 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    background-image: url('images/water33.jpg'); 
+    background-size: cover;
+
 }
 
 header {
     background-color:  rgb(17, 129, 204);
-    color: white;
-    padding: 20px 0;
+    color: black;
+    /*padding: 20px 0;*/
     text-align: center;
+}
+
+.logo{
+    width: 30px;
 }
 
 header nav ul {
@@ -25,13 +28,13 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bold;
 }
 
 .signup-container {
-    background: #ffffff;
+    background: #ffffff98;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,7 +44,7 @@ header nav ul li a {
 
 h2 {
     text-align: center;
-    color: #333;
+    color:black;
 }
 
 form {
@@ -51,7 +54,7 @@ form {
 
 label {
     margin-bottom: 5px;
-    color: #555;
+    color:black;
 }
 
 input, select {
@@ -66,7 +69,7 @@ input, select {
 button {
     padding: 10px;
     background-color: #007bff;
-    color: white;
+    color:black;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -83,4 +86,8 @@ a{
 
 a:hover{
     cursor: pointer;
+}
+
+.appear{
+    display: none;
 }

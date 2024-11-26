@@ -1,5 +1,6 @@
 
 <?php 
+    include('session.php');
 // Start session
 session_start();
 
@@ -23,20 +24,25 @@ if (isset($_POST['login'])) {
             $user = $result->fetch_assoc();
     
                 // Store user details in session
-                $_SESSION['user_id'] = $user['ID'];
+                $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['user_role'] = $user['role'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['Fname'] = $user['Fname'];
+                $_SESSION['Lname'] = $user['Lname'];
+                $_SESSION['location'] = $user['location'];
+                $_SESSION['phone'] = $user['phone'];
                 
     
                 // Redirect based on user role
                 switch ($user['role']) {
                     case 'customer':
-                        header("Location: customer/homePage.php");
+                        header("Location: customer/profile.php");
                         break;
                     case 'admin':
                         header("Location: admin/adminDashboard.php");
                         break;
                     case 'technician':
-                        header("Location: technician/homePage.php");
+                        header("Location: technician/technician.html");
                         break;
                     case 'accountant':
                         header("Location: accountant/homePage.php");

@@ -1,0 +1,188 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-image: url('../images/water33.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Top Navigation Bar */
+.topbar {
+    background-color: rgb(10, 145, 207);
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    height: auto;
+    border-radius: 25px;
+}
+
+.topbar h1 {
+    font-size: 1.5em;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+#logout {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(128, 133, 138);
+    color: #ecf0f1;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #0280a7;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+footer {
+    background-color: rgb(10, 145, 207);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+/* Styles remain mostly unchanged, but we ensure hidden sections are styled properly */
+
+/* Hide all sections by default */
+section {
+    display: none;
+}
+
+/* Show only the selected section */
+section.active {
+    display: block;
+}
+button[type='submit'] {
+    margin-bottom: 10px;
+}
+

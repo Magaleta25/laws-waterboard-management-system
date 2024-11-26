@@ -9,12 +9,15 @@
 <body>
     <header>
         <h1>Livingstonia Waterboard Management System</h1>
+        <img class="logo" src="images/synodLogo.jpg" alt="">
     </header>
     <div class="signup-container">
         <h2>Signup</h2>
         <form id="signupForm" action="signup.php" method="post">
             <label for="username">first name:</label>
-            <input type="text" id="username" name="username" placeholder="enter your first name">
+            <input type="text" id="Fname" name="Fname" placeholder="enter your first name">
+            <input type="text" id="Lname" name="Lname" placeholder="enter your last name">
+            
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email"  placeholder="enter your email">
@@ -24,8 +27,8 @@
             <label for="address">Address:</label>
             <input type="text" id="address" name="address" placeholder="enter your address">
 
-            <label for="usertype">User Type:</label><!-- hidden="hidden"we have hiden the select section so this has to go-->
-            <select id="usertype" name="usertype" required >
+            <label hidden="hidden" for="usertype">User Type:</label><!-- hidden="hidden"we have hiden the select section so this has to go-->
+            <select hidden="hidden" id="usertype" name="usertype">
                 <option value="">Select user type</option>
                 <option value="customer">customer</option>
             </select>
@@ -38,7 +41,19 @@
             <button type="submit">Sign Up</button>
             <a href="index.php">already have an account</a>
         </form>
+
+           
     </div>
-    <!-- <script src="scripts.js"></script> -->
+    
+    <form class="appear">
+        <input type="text">
+        <input type="submit">
+    </form> 
+    
+    <!--src="scripts.js"-->
+    <script >
+
+
+    </script>
 </body>
 </html>

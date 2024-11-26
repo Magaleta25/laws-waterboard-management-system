@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accountant Dashboard</title>
+    <link rel="stylesheet" href="accountant.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+        <img src="../images/synod logo.jpg " class="logo">
+        <h1>Accountant Dashboard</h1>
+        <div class="topbar-actions">
+            <div class="dropdown">
+                <button class="dropdown-btn">Profile</button>
+                <div class="dropdown-content">
+                    <a href="#" id="view-profile-btn">View Profile</a>
+                    <a href="#" id="edit-profile-btn">Edit Profile</a>
+                </div>
+            </div>
+            <button id="logout">Logout</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#verify-payments" onclick="showSection('verify-payments')">Verify Payments</a></li>
+                <li><a href="#payment-history" onclick="showSection('payment-history')">Payment History</a></li>
+                <li><a href="#announcements" onclick="showSection('announcements')">Announcements</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Verify Payments Section -->
+        <section id="verify-payments">
+            <h2>Verify Payments</h2>
+            <div id="payments-list">Loading payments...</div>
+        </section>
+
+        <!-- Payment History Section -->
+        <section id="payment-history" style="display: none;">
+            <h2>Payment History</h2>
+            <div id="history-list">Loading history...</div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section id="announcements" style="display: none;">
+            <h2>Post Announcements</h2>
+            <form id="announcement-form">
+                <input type="text" id="announcement-input" placeholder="Write an announcement..." required>
+                <button type="submit">Post</button>
+            </form>
+            <div id="announcements-list">No announcements yet.</div>
+        </section>
+
+        <!-- View Profile Section -->
+        <section id="view-profile" style="display: none;">
+            <h2>Profile Information</h2>
+            <p><strong>Name:</strong> <span id="profile-name">your_name</span></p>
+            <p><strong>Email:</strong> <span id="profile-email">your_name@example.com</span></p>
+            <p><strong>Role:</strong> Accountant</p>
+        </section>
+
+        <!-- Edit Profile Section -->
+        <section id="edit-profile" style="display: none;">
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form">
+                <input type="text" id="edit-name" placeholder="Enter new name" required>
+                <input type="email" id="edit-email" placeholder="Enter new email" required>
+                <button type="submit">Save Changes</button>
+            </form>
+            
+        </section>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Livingstonia Waterboard. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </footer>
+
+    <script src="accountant.js"></script>
+</body>
+</html>

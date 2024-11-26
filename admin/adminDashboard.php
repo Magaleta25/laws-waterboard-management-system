@@ -10,11 +10,18 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">LIVINGSTONIA WATER BOARD</div>
+        <div class="logo">
+            <div>
+            <img class="img" src="../images/synodLogo.jpg" alt=""></div>
+        </div>
+        <div class="logo">
+        LIVINGSTONIA WATER BOARD
+        </div>
         
         <div class="profile">
-         <a href="../logout.php">logout</a>
-            <a href="profile.php">
+            <button class="logout"><a href="../logout.php">logout</a></button>
+         
+           
             <i class="fas fa-user-circle"></i>
             <span class="profile.php"></span></a>
             
@@ -27,15 +34,16 @@
     </div>
     <div class="container">
         <nav class="sidebar">
-            <ul>
-                <li><a href="adminDashboard.php">Dashboard Overview</a></li>
+        <ul>
+                <li><a href="adminDashboard .php">Dashboard Overview</a></li>
+                <li><a href="adminEdit.php">User management</a></li>
                 <li><a href="Finance.php">Finance</a></li>
                 <li><a href="Technician.php">Technician Management</a></li>
                 <li><a href="customer_service.php">Customer Service</a></li>
-                <li><a href="coordinator.php">Coordinator</a></li>
-                <li><a href="customer application.php">Customer Application</a></li>
-            </ul>
-        </nav>
+                <li><a href="coordinator.php">Payments</a></li>
+                <li><a href="customerApplication.php">Customer Application</a></li>
+            </ul>       
+         </nav>
         <main class="main-content">
             <div class="overview-cards">
                 <div class="card finance">Finance Summary</div>

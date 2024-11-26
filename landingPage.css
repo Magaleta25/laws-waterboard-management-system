@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex:300px 1fr 1fr;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: rgb(17, 129, 204);
+    color: white;
+}
+
+.profileButton{
+    background-color: rgb(17, 129, 204);
+    border: none;
+
+}
+
+.logout{
+    border: none;
+    background-color: rgb(17, 129, 204);
+}
+
+.img1{
+    width: 60px;
+    background-color: whtie;
+}
